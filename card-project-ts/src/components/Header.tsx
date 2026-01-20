@@ -1,6 +1,14 @@
 import "./header.css";
 
-const Header = ({ cart }) => {
+type HeaderProps = {
+  cart: {
+    productId: string;
+    quantity: number;
+    deliveryOptionId: string;
+  }[];
+};
+
+const Header = ({ cart }: HeaderProps) => {
   let totalQuantity = 0;
   cart.forEach((cartItem) => {
     totalQuantity += cartItem.quantity;
