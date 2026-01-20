@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "./header.css";
 
 type HeaderProps = {
@@ -33,15 +34,15 @@ const Header = ({ cart }: HeaderProps) => {
         </div>
 
         <div className="right-section">
-          <a className="orders-link header-link" href="/orders">
+          <Link className="orders-link header-link" to="/orders">
             <span className="orders-text">Orders</span>
-          </a>
+          </Link>
 
-          <a className="cart-link header-link" href="/checkout">
+          <Link className="cart-link header-link" to="/checkout">
             <img className="cart-icon" src="images/icons/cart-icon.png" />
             <div className="cart-quantity">{totalQuantity}</div>
             <div className="cart-text">Cart</div>
-          </a>
+          </Link>
         </div>
       </div>
     </>
